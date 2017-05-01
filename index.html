@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PragmaticWorks</title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+  <!-- Milligram CSS minified -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.0/milligram.css">
+
+  <style type="text/css">
+    body {
+      margin: 40px auto;
+      max-width: 650px;
+      padding: 0 10px
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .Aligner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .Aligner-item {
+      max-width: 50%;
+    }
+    
+    .Aligner-item--top {
+      align-self: flex-start;
+    }
+    
+    .Aligner-item--bottom {
+      align-self: flex-end;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- taken from https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/ -->
+  <div class="Aligner">
+    <div class="Aligner-item">
+      <img src="http://0cm.classmarker.com/496123_B3JHY.gif" class="img-responsive">
+    </div>
+  </div>
+  
+  <h1><a href="http://www.pragmaticworks.org/HighTechHope.aspx">Pragmatic Works Foundation High Tech Hope Videos Notes</a></h1>
+  <hr>
+
+  <h2>Video 1 - Introduction to Databases</h2>
+  <img src="http://images.fliqz.com/0a9c1e887e1c4ac6a8f2f6a231df011b.jpg" class="img-responsive">
+  
+  <h3>Agenda</h3>
+  <p>Why should I learn this stuff?
+    <br> Database definitions
+    <br> I don't have a server!</p>
+
+  <h3>Why should I learn this stuff?</h3>
+  <p>Everything is stored electronically; a lot of it is stored in databases
+    <br> Maybe there is information stored in there that you need to automate your work
+  </p>
+
+  <h3>Database Definitions</h3>
+  <dl>
+    <dt>Database</dt>
+    <dd>An organized way to store data in tables and columns</dd>
+    <dt>RDBMS</dt>
+    <dd>Relational Database Management System</dd>
+    <dt>SQL Server</dt>
+    <dd>Microsoft's RDBMS</dd>
+    <dt>Oracle</dt>
+    <dd>Another RDBMS</dd>
+    <dt>SQL Server Management Studio</dt>
+    <dd>SSMS</dd>
+    <dd>Tool we use to work with SQL Server</dd>
+    <dt>OLTP Database</dt>
+    <dd>Online transaction processing database</dd>
+    <dd>I.E. buying something from a website, adding a new employee to the system</dd>
+    <dd>A database where the work is happening</dd>
+  </dl>
+
+  <h3>More Definitions</h3>
+  <dl>
+    <dt>OLAP Database</dt>
+    <dd>Online Analytical Processing</dd>
+    <dd>An efficient reporting database</dd>
+    <dd>Might be called a data warehouse</dd>
+    <dd>Data is stored differently than an OLTP database</dd>
+    <dt>Normalized</dt>
+    <dd>Making database efficient for inserting and updating new data</dd>
+    <dt>SQL</dt>
+    <dd>Structured Query Language</dd>
+    <dd>Standard language used to manipulate databases</dd>
+    <dd>Every database system adds its own additional features to it</dd>
+    <dt>T-SQL</dt>
+    <dd>SQL Server's version of SQL</dd>
+    <dd>Transact SQL; Microsoft's version of SQL</dd>
+    <dt>Table</dt>
+    <dd>How we store data</dd>
+    <dd>Every properly designed database has a table for each object</dd>
+    <dt>Object</dt>
+    <dd>Grid of columns and rows</dd>
+    <dt>Column</dt>
+    <dd>How we setup our data</dd>
+    <dd>Can apply rules to them</dd>
+    <dt>Row</dt>
+    <dd>Information about a particular instance</dd>
+    <dd>I.E. a row for each customer</dd>
+  </dl>
+
+  <h3>Even more...</h3>
+  <dl>
+    <dt>Primary Key</dt>
+    <dd>A column, one or a combination of columns, that uniquely defines the row</dd>
+    <dt>Foreign Key</dt>
+    <dd>A column in a table that points to the primary key in another table</dd>
+    <dd>I.E. <code>Order</code> table has one column, <code>CustomerID</code>, that points back to one row in the <code>Customer</code> table</dd>
+    <dt>Index</dt>
+    <dd>Similar to an index in the back of a book</dd>
+    <dd>Quick search to jump right to the page (or row) you want</dd>
+    <dt>Query</dt>
+    <dd>Retrieve or manipulate data in our database</dd>
+    <h4>Four types of queries:</h4>
+    <dt><code>SELECT</code></dt>
+    <dd>Used to retrieve data</dd>
+    <dt><code>INSERT</code></dt>
+    <dd>Inserting new rows into our table</dd>
+    <dt><code>UPDATE</code></dt>
+    <dd>Modify existing rows</dd>
+    <dt><code>DELETE</code></dt>
+    <dd>Remove existing rows</dd>
+  </dl>
+
+  <h3>I don't have a server!</h3>
+  <p>Search for &quot;SQL Server Virtual Labs&quot;
+    <br> You can take them for a spin for free
+    <br> Live in the cloud
+    <br> Created on the fly automatically
+    <br> When you close it up, the virtual computer is destroyed
+    <br> Use IE &amp; do bing search for SQL Server Virtual Labs
+    <br> Look for one that has the word &quot;report&quot; in it
+    <br> Hotlaunchpad?
+    <br> Opens a VM and a manual
+    <br> Scroll until you find the info on how to login to the VM
+    <br> (Mine automatically logged me in)
+    <br> Had to read doc instructions because her instructions were different to launch SQL Server 2008 R2 Management Studio
+    <br> My VM has 2012?
+    <br> She goes to the start menu, all programs, SQL Server 2008 R2, SQL Server 2008 R2 Management Studio
+    <br> Hit Connect button
+    <br> Server name: DEMO2010A
+    <br> Expand Database
+    <br> AdventureWorks2008R2 &amp; AdventureWorksDW2008R2 are the ones to work with
+    <br> Expand, Tables, HumResources.Employee, Right Click, Select Top 1000 Rows
+    <br> Query window pops open
+    <br> Top shows SELECT statement, bottom shows table
+  </p>
+
+  <h3>For more information...</h3>
+  <a href="http://www.pragmaticworks.com">http://www.pragmaticworks.com</a>
+  <br> Kathi Kellenberger
+  <br>
+  <a href="mailto:kkellenberger@pragmaticworks.com">kkellenberger@pragmaticworks.com</a>
+  <br> Can email her questions about what we learned here today
+  <br> She can't answer questions on problems with the virtual labs
+  <hr>
+
+  <h2>Video 2 - <code>SELECT</code> Part 1</h2>
+  <img src="http://images.fliqz.com/06a29c29f3524b4f9fa8454c8a68259d.jpg" class="img-responsive">
+  
+  <h3>Agenda</h3>
+  <p>Tools
+    <br> so we can follow along or work on our own to learn more
+    <br> Hello, World!
+    <br> Retrieving Data
+    <br> Filtering Data
+    <br> Ordering Data
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server
+    <br> If you have a SQL Server available, download the sample OLTP database, AdventureWorks, from www.Codeplex.com
+    <br> figure out which version of SQL server you are running and download that specific version
+    <br> You can start with anything from 2008 to 2012 to follow along
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server free virtual labs
+    <br>
+    <a href="http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx">http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx</a>
+    <br> Go back to first video to learn more on how to do this
+  </p>
+
+  <h3>Demos, and More Demos!</h3>
+  <p>She goes to the start menu, all programs, SQL Server 2008 R2, SQL Server 2008 R2 Management Studio
+    <br> AdventureWorks2008R2 is the ones to work with
+    <br> (I went to MSBI box to get into SSMS)
+    <br> How to print something on the screen
+    <br> Click New Query
+    <br> Select line you want to run, otherwise everything will run
+    <br> Typed in <code>PRINT 'Hello, World!'</code>
+    <br> Highlight it
+    <br> Press Execute button
+    <br>
+    <code>Hello, World!</code> displays in Messages tab
+    <br> Type in <code>SELECT 'Hello, World!'</code>
+    <br> Highlight it
+    <br> Execute
+    <br> This time the results come back in a grid
+    <br> There are buttons up top that let you select whether you want the results to go to text, grid or a file
+    <br> Selected text and you get text in a Results tab at bottom of screen
+    <br> Type in
+    <pre><code>Use AdventureWorks2012
+GO<br></code></pre>
+    <code>GO</code> is a batch separator (separate batches of information from one another)
+    <br> If you switch to the master database &amp; click Execute it pops right to AdventureWorks2012
+    <br> Object Explorer, Databases, AdventureWorks2012, Tables
+    <br> There are many tables listed, grouped by area of the company
+    <br> This is called a schema
+    <br> A schema is the way to group objects in a database so you can group ownership and permissions in an easy way
+    <br> This is not always used in databases
+    <br> Sometimes every single table will start with <code>dbo</code>
+    <br> AdventureWorks is a fictitious company that sells bicycles
+    <br> When you pull data from a table you have to have at least two things:
+    <!-- not happy with the formatting here -->
+    <ol>
+      <li>the word <code>SELECT</code>, (<code>*</code> in this example)</li>
+      <li>the word <code>FROM</code>, followed by the table name</li>
+    </ol>
+    Fully qualified: <code>Schema.Table</code>
+    <br> If table name starts with <code>dbo</code>, she may or may not specify <code>dbo</code>
+    <br> Type in
+    <pre><code>SELECT * FROM HumanResources.Department</code></pre> Results to Grid
+    <br> Highlight and Execute
+    <br> You get back every column from that table
+    <br> Expand HumanResources.Department, Columns and you can see the exact columns from the table
+    <br> Type in
+    <pre><code>SELECT * FROM Department</code></pre> Highlight and Execute
+    <br> You get an Invalid object name error
+    <br>
+    <code>--</code> two dashes in front of a line is a single line comment
+    <br>
+    <code>/* */</code> is a multi line comment
+    <br> You almost never should use <code>SELECT *</code>
+    <br> You don't always want to return every column
+    <br> There are some performance issues, pulling data you don't need to see
+    <br> Some data may be confidential
+    <br> SQL gives you some nice tools to script things
+    <br> Go the the table &amp; right click it; there are a lot of options, such as
+    <br> Select top 1000 rows
+    <br> Script Table as SELECT to New Query Edit Window
+    <br> It generated the following SQL code:
+    <br>
+    <pre><code>USE [AdventureWorks2012]
+GO
+
+SELECT [DepartmentID]
+      ,[Name]
+      ,[GroupName]
+      ,[ModifiedDate]
+FROM [HumanResources].[Department]
+GO</code></pre> She commented out some of the lines
+    <br> She deleted some of the lines
+    <br> SQL Server has IntelliSense
+    <br> Start typing in the column name and it can auto-complete
+    <br> No excuse for writing queries with <code>*</code>
+    <br> The next thing to learn is filtering the data
+    <br> Use the <code>WHERE</code> clause to compare one of the columns to a value
+    <br>
+    <code>[]</code> surrounding columns are optional except for column names that are not legal; I.E. a column name with a space in it or a reserved keyword in it
+    <br> Type in
+    <pre><code>SELECT [BusinessEntityID]
+     , [JobTitle]
+     , [BirthDate]
+     , [MaritalStatus]
+     , [Gender]
+     , [HireDate]
+FROM [HumanResources].[Employee]</code></pre> Highlight and Execute
+    <br> All that info comes back
+    <br> Type in at bottom
+    <pre><code>WHERE [BusinessEntityID] = 3</code></pre> Highlight and Execute
+    <br> Get back a single row
+    <br> She typed in
+    <br>
+    <pre><code>WHERE 1 = 1</code></pre> She got back the entire table
+    <br> She typed in
+    <br>
+    <pre><code>WHERE 1 = 2</code></pre> She got back nothing
+    <br> If you want to filter on columns that have string type data
+    <br> Type in
+    <pre><code>SELECT [BusinessEntityID]
+     , [JobTitle]
+     , [BirthDate]
+     , [MaritalStatus]
+     , [Gender]
+     , [HireDate]
+FROM [HumanResources].[Employee]
+WHERE Gender = 'F'</code></pre> Highlight and Execute
+    <br> Only get back 84 rows
+    <br> Filter on dates
+    <br> Type in
+    <pre><code>SELECT [BusinessEntityID]
+     , [JobTitle]
+     , [BirthDate]
+     , [MaritalStatus]
+     , [Gender]
+     , [HireDate]
+FROM [HumanResources].[Employee]
+WHERE BirthDate BETWEEN '1/1/1970' AND '12/31/1970'</code></pre> Highlight and Execute
+    <br> 16 people born in 1970
+    <br>
+    <code>BETWEEN</code> is inclusive
+    <br> We can do lots of things with <code>WHERE</code> clauses
+    <br> Will go more in-depth in later videos
+    <br> How to sort data in the database
+    <br> We use the <code>ORDER BY</code> clause
+    <br> Can specify column not listed if you choose
+    <br> Type in
+    <pre><code>SELECT [BusinessEntityID]
+     , [JobTitle]
+     , [BirthDate]
+     , [MaritalStatus]
+     , [Gender]
+     , [HireDate]
+FROM [HumanResources].[Employee]
+ORDER BY [BirthDate]</code></pre> Highlight and Execute
+    <br> Type in
+    <pre><code>ORDER BY [HireDate]</code></pre> Highlight and Execute
+    <br> Type in
+    <pre><code>ORDER BY [HireDate] DESC</code></pre> Can specify more than one column Highlight and Execute Type in
+    <br>
+    <pre><code>ORDER BY [JobTitle], [BirthDate] DESC</code></pre> 
+    Highlight and Execute
+    <dl>
+      <dt>We've learned a lot in this video. We've learned how to:</dt>
+      <dd>Find where are tables are</dd>
+      <dd>Look at them over in the sidebar</dd>
+      <dd>Connect to a specifc database</dd>
+      <dd>Print a message on the screen</dd>
+      <dd>Select information from a table using a <code>SELECT</code> statement</dd>
+      <dd>Filter data</dd>
+      <dd>Sort data</dd>
+    </dl>
+    Play around and write <code>SELECT</code> statements
+    <br> Make up some of your own
+    <hr>
+
+  <h2>Video 3 - <code>SELECT</code> Part 2</h2>
+  <p>How to use expressions and functions in your T-SQL statements</p>
+  <img src="http://images.fliqz.com/f213e075495449dc8c554a1d67c12bfb.jpg" class="img-responsive">
+  
+  <h3>Agenda</h3>
+  <p>Tools
+    <br> Concatenate Columns
+    <br> Mathematical Operations
+    <br> Using Functions
+    <br>
+    <code>CASE</code>
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server
+    <br> If you have a SQL Server available, download the sample OLTP database, AdventureWorks, from www.Codeplex.com
+    <br> figure out which version of SQL server you are running and download that specific version
+    <br> You can start with anything from 2008 to 2012 to follow along
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server free virtual labs
+    <br>
+    <a href="http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx">http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx</a>
+    <br> Go back to first video to learn more on how to do this
+  </p>
+
+  <h4>Concatenate two columns</h4>
+  Type in
+  <pre><code>--Concatenating character data
+SELECT Name, GroupName,
+[Name] + [GroupName]
+FROM HumanResources.Department</code></pre> Highlight and Execute
+  <br> By using the <code>+</code> sign we can concatenate these two columns together
+  <br> Creates a third (No column name) with data from these two jammed together
+  <br> In order to get over this problem of (No column name), you can add an alias
+  <br> Type in
+  <pre><code>--Adding an alias
+SELECT Name, GroupName,
+[Name] + [GroupName] AS &quot;New Name&quot;
+FROM HumanResources.Department</code></pre> Highlight and Execute
+  <br> Would not have to use quotes around New Name if it didn't have a space in the name
+  <br> Also can't use any reserved or keywords for alias names
+  <br> Can also use an alias for any of the other columns
+  <br> Type in
+  <pre><code>SELECT Name AS &quot;Old Name&quot;, GroupName,
+[Name] + [GroupName] AS &quot;New Name&quot;
+FROM HumanResources.Department</code></pre> Highlight and Execute
+  <br> Same results as last one except we are using alias name
+  <br> Type in
+  <pre><code>SELECT Name GroupName,
+[Name] + [GroupName] AS &quot;New Name&quot;
+FROM HumanResources.Department</code></pre> Highlight and Execute
+  <br> GroupName is used as an alias when this is run
+  <br> This is a very common mistake
+  <br> Add the comma back and you get what you expect
+  <br> That's why she likes to use the <code>AS</code> keyword, even though it's optional so that she's very clear in what she's trying to accomplish
+  <br> Type in
+  <pre><code>--Add a literal value
+SELECT Name OldName, GroupName,
+[GroupName] + ': ' + [Name] AS &quot;New Name&quot;
+FROM HumanResources.Department</code></pre> Highlight and Execute
+  <br> Formats concatenated data in New Name field
+  <br> This might be something you want to generate for a report
+  <br> Type in
+  <pre><code>--Add a number to a string
+SELECT Name GroupName,
+[Name] + [GroupName] AS &quot;New Name&quot;
+FROM HumanResources.Department</code></pre> Highlight and Execute
+  <br> Get error message saying string value cannot be converted to an integer
+  <br> To get around this, we are going to use a function
+  <br> Functions are pieces of reusable code
+  <br> We have two ways we can do this
+  <br>
+  <code>CAST</code> function
+  <br>
+  <code>CONVERT</code> function
+  <br> Type in
+  <pre><code>--Cast and Convert
+SELECT Name + CAST(DepartmentID AS VARCHAR) AS &quot;Cast&quot;,
+Name + CONVERT(VARCHAR, DepartmentID) AS &quot;Convert&quot;
+FROM HumanResources.Department</code></pre> Highlight and Execute
+  <br> Gives two columns, Cast and Convert, with same exact results
+  <br> Type in
+  <pre><code>--NULLS
+SELECT AddressLine1, AddressLine2
+FROM Person.Address</code></pre> Highlight and Execute
+  <br>
+  <code>AddressLine1</code> has good data, <code>AddressLine2</code> has <code>NULL</code>
+  <br>
+  <code>NULL</code> value means unknown
+  <br> We don't know if the data exists or not
+  <br> Let's say we want to append these two columns together
+  <br> Type in
+  <pre><code>SELECT AddressLine1, AddressLine2,
+AddressLine1 + ' ' + AddressLine2
+FROM Person.Address</code></pre> Highlight and Execute
+  <br> We see that <code>AddressLine1 + NULL = NULL</code>
+  <br> Anytime we operate with <code>NULL</code>, we end up with <code>NULL</code> as a result
+  <br> Scroll down to a line with a value in <code>AddressLine2</code> and we get what we were after
+  <br> There are two functions for this
+  <br>
+  <code>ISNULL <br>
+COALESCE</code>
+  <br> Type in
+  <pre><code>--ISNULL and COALESCE
+SELECT AddressLine1, AddressLine2
+AddressLine1 + ' ' + ISNULL(AddressLine2,'') AS &quot;ISNULL&quot;,
+AddressLine1 + ' ' + COALESCE(AddressLine2,'') AS &quot;COALESCE&quot;
+FROM Person.Address</code></pre> Highlight and Execute
+  <br> With <code>ISNULL</code>, we provide two arguments
+  <br> One is checked to see if it returns a <code>NULL</code> or not
+  <br> If it does return a <code>NULL</code> then the second argument is the replacement
+  <br> With <code>COALESCE</code>, we actually have multiple values (more than two)
+  <br> It will find the first non-NULL value
+  <br> For this particular query, <code>ISNULL</code> and <code>COALESCE</code> are working exactly the same
+  <br> Type in
+  <pre><code>--More COALESCE
+SELECT Size, Class, Color
+,COALESCE(Size,Class,Color) AS &quot;COALESCE&quot;
+FROM Production.Product
+WHERE Color IS NOT NULL OR Size IS NOT NULL
+OR Class IS NOT NULL</code></pre> Highlight and Execute
+  <br> Most of the vaules are NULL for these three columns
+  <br> We are using a <code>WHERE</code> clause to filter out where all 3 are NULL
+  <br>
+  <code>COALESCE</code> is looking through the values and returning the first non-NULL value
+  <br> There's a new function in SQL Server 2012 called <code>CONCAT</code>
+  <br> With <code>CONCAT</code> we can supply the values we want to concatenate and we don't have to worry about <code>NULL</code>
+  <br> It will change any of the <code>NULL</code> values to an empty string
+  <br> Cool new feature
+  <br> Type in
+  <pre><code>/* NEW FUNCTION IN SQL SERVER 2012!
+
+CONCAT(Co11,Co12,Co13)
+
+*/</code></pre> What if we are working with numbers?
+  <br> Type in
+  <pre><code>--Mathematical operators
+SELECT BusinessEntityID,
+BusinessEntityID * 2 AS &quot;Multiply&quot;,
+BusinessEntityID / 2 AS &quot;Divide&quot;,
+BusinessEntityID + 2 AS &quot;Add&quot;,
+BusinessEntityID - 2 AS &quot;Subtract&quot;,
+BusinessEntityID % 2 AS &quot;Modulo&quot;
+FROM HumanResources.Employee</code></pre> Highlight and Execute
+  <br> Modulo is the remainder
+  <br> There are a number of mathematical functions you can use as well
+  <br> Type in
+  <pre><code>--Mathematical functions
+SELECT BusinessEntityID,
+SQUARE(BusinessEntityID) AS &quot;Square&quot;,
+SQRT(BusinessEntityID) AS &quot;SQRT&quot;,
+ROUND(SQRT(BusinessEntityID),2) AS &quot;Round&quot;
+FROM HumanResources.Employee</code></pre> Highlight and Execute
+  <br> In one example, the <code>SQRT</code> function is nested inside the <code>ROUND</code> function
+  <br>
+  <code>ROUND</code> rounds the <code>SQRT</code> decimals to two places
+  <br> There are many more mathematical functions you can look up online
+  <br> She displayed a list of them from the online documentation
+  <br> You can also use functions with strings
+  <br> Type in
+  <pre><code>--String functions
+SELECT Description, LEFT(Description,10) AS &quot;Left 10&quot;,
+SUBSTRING(Description,11,30) AS &quot;Substring&quot;,
+CHARINDEX('Alu',Description) AS &quot;Charindex&quot;
+FROM Production.ProductDescription</code></pre> Highlight and Execute
+  <br> <code>LEFT</code> selects just the first 10 chars from the string
+  <br> <code>SUBSTRING</code> starts from the middle of the string
+  <br> <code>CHARINDEX</code> allows us to search for a char or number of characters and returns the position
+  <br> There are many more string functions available that you can look up online
+  <br> There are many functions you can use to work with dates
+  <br> Type in
+  <pre><code>--Date functions
+SELECT BirthDate, HireDate,
+DATEADD(yyyy,10,HireDate) AS &quot;DateAdd&quot;,
+DATEDIFF(YYYY,BirthDate,HireDate) AS &quot;DateDiff&quot;,
+YEAR(BirthDate) AS &quot;Year&quot;,
+GETDATE()
+FROM HumanResources.Employee</code></pre> Highlight and Execute
+  <br>
+  <code>DATEADD</code> adds 10 years to the HireDate
+  <br>
+  <code>DATEDIFF</code> finds out how many years between BirthDate and HireDate
+  <br>
+  <code>YEAR</code> returns just the year
+  <br>
+  <code>GETDATE</code> returns the current date and time
+  <br>
+  <code>DATEDIFF</code> is not calcuating the real difference between the entire date
+  <br> Type in
+  <pre><code>/* NEW FUNCTIONS in SQL Server 2012!!!
+
+FORMAT, EOMONTH, DATEFROMPARTS
+
+*/</code></pre>
+  <code>FORMAT</code> is just like the format function in .Net
+  <br>
+  <code>EOMONTH</code> returns the last day of the month
+  <br>
+  <code>DATEFROMPARTS</code> has several sub-functions
+  <br> In versions earlier than 2012 you can use the <code>CONVERT</code> function with the optional <code>STYLE</code> parameter to specify how to format your date
+  <br> Type in
+  <pre><code>--Convert
+SELECT BirthDate,
+CONVERT(VARCHAR,BirthDate,111) AS &quot;Slashes&quot;,
+CONVERT(VARCHAR,BirthDate,107) AS &quot;Spelled out&quot;
+FROM HumanResources.Employee</code></pre> Highlight and Execute
+  <br> Works in 2012!
+  <br>
+  <code>BirthDate</code> is stored as a number but is presented in human readable form
+  <br> Take a look at books online for the different styles available
+  <br> Type in
+  <pre><code>--CASE
+SELECT BusinessEntityID,
+CASE BusinessEntityID % 2 WHEN 0 THEN 'Even'
+WHEN 1 THEN 'Odd' Else 'UNKNOWN' END AS OddOREven
+FROM HumanResources.Employee</code></pre> Highlight and Execute
+  <br> Type in
+  <pre><code>/* NEW FUNCTIONS IN SQL SERVER 2012
+
+IIF
+
+*/</code></pre>
+  <code>IIF</code> - in-line IF
+  <br> Found in many other languages
+  <br> Same idea as using <code>CASE</code>
+  <br> We can use expressions and functions in the other parts of a SQL Server statement as well
+  <br> Most of those are too advanced for this particular video but she does have one easy example she wants to show us
+  <br> Type in
+  <pre><code>--Order by
+SELECT HireDate
+FROM HumanResources.Employee
+ORDER BY MONTH(HireDate)</code></pre> Highlight and Execute
+  <br> Notice that all of the January's are returned first, then the Feburary's, etc.
+  <hr>
+
+  <h2>Video 4 - <code>SELECT</code> Part 3</h2>
+  <p>In this video, we'll learn more about the <code>WHERE</code> clause</p>
+  <img src="http://images.fliqz.com/47963fbf38bb49b9af18e3fb7acae5f9.jpg" class="img-responsive">
+  
+  <h3>Agenda</h3>
+  <p>Tools
+    <br> Using functions and expressions
+    <br> <code>NULL</code>
+    <br> Multiple conditions
+    <br> The <code>IN</code> list</p>
+
+  <h3>Tools</h3>
+  <p>SQL Server
+    <br> If you have a SQL Server available, download the sample OLTP database, AdventureWorks, from www.Codeplex.com
+    <br> figure out which version of SQL server you are running and download that specific version
+    <br> You can start with anything from 2008 to 2012 to follow along
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server free virtual labs
+    <br>
+    <a href="http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx">http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx</a>
+    <br> Go back to first video to learn more on how to do this
+  </p>
+
+  <h3>Demos, and More Demos!</h3> Type in
+  <br>
+  <pre><code>--Using an expression in the WHERE clause
+SELECT BusinessEntityID
+FROM HumanResources.Employee
+WHERE BusinessEntityID % 2 = 0</code></pre> Highlight and Execute
+  <br> Get back 145 rows with WHERE clause, 290 without
+  <br> Comparing an expresson to a value
+  <br> Type in
+  <pre><code>--Using an expression in the WHERE clause
+SELECT BusinessEntityID
+FROM HumanResources.Employee
+WHERE BusinessEntityID % 2 != 0</code></pre> Highlight and Execute
+  <br>
+  <code>!=</code> is not equals
+  <br> Should give you the opposite of the previous code's results
+  <br>
+  <code>&lt;&gt;</code> is the same as <code>!=</code> (from Visual Basic)
+  <br> Type in
+  <pre><code>--Using a function in the WHERE clause
+SELECT BusinessEntityID, HireDate
+FROM HumanResources.Employee
+WHERE YEAR(HireDate) = 2003</code></pre> Highlight and Execute
+  <br> This is not always a great idea
+  <br> If you have an index on the column that you use with your function, that will cause SQL Server to ignore that index
+  <br> SQL Server has to apply the function to every single row
+  <br> In this example the field isn't an index
+  <br> A better way to accomplish the same thing
+  <br> Type in
+  <pre><code>--A better way to write this!
+SELECT BusinessEntityID, HireDate
+FROM HumanResources.Employee
+WHERE HireDate &gt;= '1/1/2003' AND HireDate &lt; '1/1/2004'</code></pre> Highlight and Execute
+  <br> We get the same answer as previous example
+  <br> Another way to do this is using the <code>BETWEEN</code> operator
+  <br> Type in
+  <pre><code>--BETWEEN
+SELECT BusinessEntityID, HireDate
+FROM HumanResources.Employee
+WHERE HireDate BETWEEN '1/1/2003' AND '12/31/2003'</code></pre> Highlight and Execute
+  <br> We get the same answer as previous example
+  <br> Some other examples with <code>BETWEEN</code>
+  <br> Type in
+  <pre><code>SELECT BusinessEntityID, HireDate
+FROM HumanResources.Employee
+WHERE BusinessEntityID BETWEEN 10 AND 15</code></pre> Highlight and Execute
+  <br> Type in
+  <pre><code>SELECT BusinessEntityID, HireDate
+FROM HumanResources.Employee
+WHERE BusinessEntityID BETWEEN 15 AND 10</code></pre> Highlight and Execute
+  <br> Gives no results
+  <br> Type in
+  <pre><code>SELECT BusinessEntityID, HireDate
+FROM HumanResources.Employee
+WHERE BusinessEntityID NOT BETWEEN 10 AND 15</code></pre> Highlight and Execute
+  <br> The <code>NOT</code> operator is used a lot in queries
+  <br> Type in
+  <pre><code>SET STATISTICS IO ON</code></pre> Highlight and Execute
+  <br> Command(s) completed successfully
+  <br> Helps you figure out how well your queries are performing or compare two different queries
+  <br> Type in
+  <pre><code>SELECT FirstName, LastName
+FROM Person.Person
+WHERE LEFT(Lastname,1) ='M'</code></pre> Highlight and Execute
+  <br> Looks for all the last names that end with M
+  <br> There is an index on <code>LastName</code>
+  <br> 1550 rows
+  <br> Look in the Messages tab
+  <br> Focus on logical reads 106
+  <br> Another way to write this query using <code>LIKE</code>
+  <br> Type in
+  <pre><code>--Like
+SELECT FirstName, LastName
+FROM Person.Person
+WHERE LastName LIKE 'M%'</code></pre> Highlight and Execute
+  <br> There are other ways to use <code>LIKE</code> and other ways to specify all characters
+  <br> We still get back 1550 rows, but logical reads 12
+  <br> That means this query performs much better
+  <br> Remember that our index is a compound index conataining last name and first name
+  <br> Type in
+  <pre><code>--The second column in the index
+SELECT FirstName, LastName
+FROM Person.Person
+WHERE FirstName = 'Zheng'</code></pre> Highlight and Execute
+  <br> logical reads 106
+  <br> Keep in mind indexes might be in place to help the performance of your query and there are things you can do to figure out if the way you are writing it is going to have good performance or not
+  <br> Type in
+  <pre><code>--Nulls
+--19614 values
+SELECT AddressLine1, AddressLine2
+FROM Person.Address</code></pre> Highlight and Execute
+  <br> 19614 rows
+  <br> Type in
+  <pre><code>--4 values
+SELECT AddressLine1, AddressLine2
+FROM Person.Address
+WHERE AddressLine2 = '# 4'</code></pre> Highlight and Execute
+  <br> 4 rows
+  <br> Type in
+  <pre><code>--358 values
+SELECT AddressLine1, AddressLine2
+FROM Person.Address
+WHERE AddressLine2 &lt;&gt; '# 4'</code></pre> Highlight and Execute
+  <br> 358 rows back
+  <br> That doesn't make sense
+  <br> Theoretically it should be the number of the entire table minus the number of rows found in the previous query
+  <br> The problem is that we cannot compare anything to <code>NULL</code>
+  <br> The way to do this
+  <br> Type in
+  <pre><code>SELECT AddressLine1, AddressLine2
+FROM Person.Address
+WHERE AddressLine2 &lt;&gt; '# 4'
+OR AddressLine2 IS NULL</code></pre> Highlight and Execute
+  <br> 19610 rows
+  <br> Another way to do this is with <code>ISNULL</code> function
+  <br> Type in
+  <pre><code>SELECT AddressLine1, AddressLine2
+FROM Person.Address
+WHERE ISNULL(AddressLine2,'') &lt;&gt; '# 4'</code></pre> Highlight and Execute
+  <br> The empty string '' can be compared to '# 4'
+  <br> 19610 rows
+  <br> Make sure you don't have an index on that AddressLine2 column
+  <br> Type in
+  <pre><code>--Multiple conditions
+SELECT FirstName, LastName
+FROM Person.Person
+WHERE LastName = 'Adams' AND FirstName = 'Edward'</code></pre> Highlight and Execute
+  <br> 1 entry
+  <br> 2 logical reads
+  <br> Type in
+  <pre><code>--Multiple conditions
+SELECT FirstName, LastName
+FROM Person.Person
+WHERE LastName = 'Adams' OR FirstName = 'Edward'</code></pre> Highlight and Execute
+  <br> 157 rows
+  <br> 108 logical reads
+  <br> That's because with the AND query we were able to use the index to find the rows
+  <br> Type in
+  <pre><code>/*Return a list of names the last name
+must be Adams or Brown, the first name 
+must be Edward
+*/
+SELECT FirstName, LastName
+FROM Person.Person
+WHERE LastName = 'Adams' OR LastName = 'Brown'
+AND FirstName = 'Edward'</code></pre> Highlight and Execute
+  <br> 87 rows
+  <br> A bunch of people, only 1 Edward
+  <br> SQL Server is trying to figure out what you are trying to do here
+  <br> It processes the <code>AND</code> first, then the <code>OR</code>
+  <br> Type in
+  <pre><code>SELECT FirstName, LastName
+FROM Person.Person
+WHERE LastName = 'Adams' OR FirstName = 'Edward'
+AND LastName = 'Brown'</code></pre> Highlight and Execute
+  <br> 93 rows, still not right
+  <br> Use <code>()</code> to force SQL Server to evaluate differently
+  <br> Type in
+  <pre><code>SELECT FirstName, LastName
+FROM Person.Person
+WHERE (LastName = 'Adams' OR LastName = 'Brown')
+AND FirstName = 'Edward'</code></pre> Highlight and Execute
+  <br> 2 rows
+  <br> Type in
+  <pre><code>SELECT FirstName, LastName
+FROM Person.Person
+WHERE LastName IN ('Adams','Brown')
+AND FirstName = 'Edward'</code></pre> Highlight and Execute
+  <br> 2 rows, same results as previous
+  <hr>
+
+  <h2>Video 5 - <code>JOIN</code>ing Tables Part 1</h2>
+  <p>Learn how to <code>JOIN</code> two or more tables in one query</p>
+  <img src="http://images.fliqz.com/1051711f2ef641dd96320ee3ed1aa744.jpg" class="img-responsive">
+
+  <h3>Agenda</h3> Tools
+  <p> Why do we need to <code>JOIN</code> tables?
+    <br> How to <code>JOIN</code> tables
+    <br> Examples
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server
+    <br> If you have a SQL Server available, download the sample OLTP database, AdventureWorks, from www.Codeplex.com
+    <br> figure out which version of SQL server you are running and download that specific version
+    <br> You can start with anything from 2008 to 2012 to follow along
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server free virtual labs
+    <br>
+    <a href="http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx">http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx</a>
+    <br> Go back to first video to learn more on how to do this
+  </p>
+
+  <h3>Why do we need to <code>JOIN</code> tables?</h3>
+  <p>Why not have all the data in 1 gigantic table?
+    <br> App wouldn't perform very well
+    <br> Designed via a process called normalization
+    <br> One table for each type of object
+    <br> Key icon next to a field means that field is a primary key
+  </p>
+
+  <h3>How to <code>JOIN</code> Tables</h3> Old syntax:
+  <br>
+  <pre><code>SELECT col1, col2
+FROM table1, table2
+WHERE col1 = col2</code></pre> Preferred syntax:
+  <pre><code>SELECT col1, col2
+FROM table1 INNER JOIN table2
+ON col1 = col2</code></pre>
+  <p>Column names of primary key and foreign key can be identical or not
+    <br> Will explain reason why she doesn't like old syntax later
+  </p>
+
+  <h3>Demos, and More Demos!</h3> 
+  Type in
+  <pre><code>/*
+Requirements: Create a list of current employees,
+their names, titles and departments
+*/</code></pre> First thing is to take a look at the tables we have available
+  <br> Type in
+  <pre><code>SELECT * FROM HumanResources.Employee</code></pre> Highlight and Execute
+  <br> 290 rows
+  <br> Contains Job Title
+  <br> We will have to pull data from another table
+  <br> Type in
+  <pre><code>--Join the Employee table to the Person.Person
+--table to display the employee name with the title.
+SELECT emp.BusinessEntityID AS EmployeeID, contact.FirstName,
+contact.Lastname, emp.JobTitle
+FROM HumanResources.Employee AS emp
+INNER JOIN Person.Person AS contact
+ON emp.BusinessEntityID = contact.BusinessEntityID
+ORDER BY emp.BusinessEntityID</code></pre> Highlight and Execute
+  <br> She had to put emp or contact in front of <code>BusinessEntityID</code> becuase the field name is exactly the same in both tables &amp; this qualifies where the data is coming from
+  <br> She made emp an alias for <code>HumanResources.Employee</code>
+  <br> She made contact an alias for <code>Person.Person</code>
+  <br> The word <code>INNER</code> is optional
+  <br> She takes a step-by-step approach to writing the queries
+  <br> Still have 290 rows
+  <br> Next thing is to include their departments
+  <br> There's an intermediate table called <code>EmployeeDepartmentHistory</code> that we have to <code>JOIN</code> to
+  <br> This table could have more than one row for an employee
+  <br> Type in
+  <pre><code>SELECT emp.BusinessEntityID AS EmployeeID, contact.FirstName,
+contact.Lastname, emp.JobTitle,
+edh.DepartmentID, edh.StartDate, edh.EndDate
+FROM HumanResources.Employee AS emp
+INNER JOIN Person.Person AS contact
+ON emp.BusinessEntityID = contact.BusinessEntityID
+INNER JOIN HumanResources.EmployeeDepartmentHistory AS edh
+ON emp.BusinessEntityID = edh.BusinessEntityID
+WHERE edh.EndDate IS NULL</code></pre> Highlight and Execute (except for last WHERE line)
+  <br> 296 rows
+  <br> Two rows for Rob Walters
+  <br> A lot of <code>EndDate</code> fields are <code>NULL</code>
+  <br> Rob Walters got transferred from dept 1 to dept 2
+  <br> Highlight and Execute (include last <code>WHERE</code> line)
+  <br> 290 rows
+  <br> Rob Walters only shows up once
+  <br> Type in
+  <pre><code>SELECT emp.BusinessEntityID AS EmployeeID, contact.FirstName,
+contact.Lastname, emp.JobTitle,
+dept.DepartmentID, dept.Name
+FROM HumanResources.Employee AS emp
+INNER JOIN Person.Person AS contact
+ON emp.BusinessEntityID = contact.BusinessEntityID
+INNER JOIN HumanResources.EmployeeDepartmentHistory AS edh
+ON emp.BusinessEntityID = edh.BusinessEntityID
+INNER JOIN HumanResources.Department AS dept
+ON edh.DepartmentID = dept.DepartmentID
+WHERE edh.EndDate IS NULL
+ORDER BY emp.BusinessEntityID</code></pre> Highlight and Execute
+  <br> Added <code>dept</code> name
+  <br> Switched to the <code>dept</code> table
+  <br> May want to put in an alias for <code>dept.Name</code>
+  <br> We are using <code>EmployeeDepartmentHistory</code> but not displaying any columns from that table
+  <br> That is often the case when working with an intermediary table
+  <br> Now that we have a good query that fulfills our requirements, we will learn how to do it using the older syntax
+  <br> Type in
+  <pre><code>--The &quot;other&quot; way
+SELECT emp.BusinessEntityID AS EmployeeID, contact.FirstName,
+contact.LastName, emp.JobTitle,
+dept.DepartmentID, dept.Name
+FROM HumanResources.Employee AS emp,
+Person.Person AS contact,
+HumanResources.EmployeeDepartmentHistory AS edh,
+HumanResources.Department AS dept
+WHERE edh.EndDate IS NULL
+AND emp.BusinessEntityID = contact.BusinessEntityID
+AND emp.BusinessEntityID = edh.BusinessEntityID
+AND edh.DepartmentID = dept.DepartmentID
+ORDER BY emp.BusinessEntityID</code></pre> Highlight and Execute
+  <br> 290 rows
+  <br> This query works however it is written differently
+  <br> All <code>JOIN</code> conditions listed in the <code>WHERE</code> clause
+  <br> Doesn't like it because
+  <br> Her <code>WHERE</code> conditions and <code>JOIN</code> conditions are mixed together; would rather keep them separate for clarity
+  <br> When you <code>JOIN</code> this way, you don't have to have a <code>WHERE</code> clause at all
+  <br> Similar query but left out one of the <code>JOIN</code> conditions
+  <br> Type in
+  <pre><code>--What if I forget one of the join condtions?
+SELECT emp.BusinessEntityID AS EmployeeID, contact.FirstName,
+contact.LastName, emp.JobTitle,
+dept.DepartmentID,dept.Name
+FROM HumanResources.Employee AS emp,
+Person.Person AS contact,
+HumanResources.EmployeeDepartmentHistory AS edh,
+HumanResources.Department AS dept
+WHERE edh.EndDate IS NULL
+AND emp.BusinessEntityID = contact.BusinessEntityID
+AND edh.DepartmentID = dept.DepartmentID
+ORDER BY emp.BusinessEntityID</code></pre> Highlight and Execute
+  <br> 84100 rows!
+  <br> Very easy to make a mistake with this method
+  <br> There's other more advanced <code>JOIN</code>s we'll talk about in later videos where you can't use this method at all, so better off sticking with the other way
+  <hr>
+
+  <h2>Video 6 - <code>JOIN</code>ing Tables Part 2</h2>
+  <img src="http://images.fliqz.com/79eb18ef6fcc40b291e9edd5286b68ec.jpg" class="img-responsive">
+  
+  <h3>Agenda</h3>
+  <p>Tools
+    <br>
+    <code>OUTER JOIN</code>
+    <br> Sub-Query
+    <br>
+    <code>FULL OUTER JOIN</code>
+    <br>
+    <code>CROSS JOIN</code>
+    <br>
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server
+    <br> If you have a SQL Server available, download the sample OLTP database, AdventureWorks, from www.Codeplex.com
+    <br> figure out which version of SQL server you are running and download that specific version
+    <br> You can start with anything from 2008 to 2012 to follow along</p>
+
+  <h3>Tools</h3>
+  <p>SQL Server free virtual labs
+    <br>
+    <a href="http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx">http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx</a>
+    <br> Go back to first video to learn more on how to do this</p>
+
+  <h3>Demos, and More Demos!</h3> Type in
+
+  <pre><code>--The list of customers with the sales order ID
+SELECT c.CustomerID, c.AccountNumber, o.SalesOrderID
+FROM Sales.Customer AS c
+INNER JOIN Sales.SalesOrderHeader AS o
+ON c.CustomerID = o.CustomerID</code></pre> Highlight and Execute
+  <br> 31465 rows
+  <br> It's possible that I have some customers that have not placed an order
+  <br> However, it's not possible to have <code>SalesOrderHeader</code> without a customer
+  <br> Type in
+  <pre><code>/*
+Display all the customers with orders even
+if no orders yet
+Using LEFT OUTER JOIN
+*/
+SELECT c.CustomerID, c.AccountNumber, o.SalesOrderID
+FROM Sales.Customer AS c
+LEFT OUTER JOIN Sales.SalesOrderHeader AS o
+ON c.CustomerID = o.CustomerID</code></pre> Highlight and Execute
+  <br> The <code>OUTER</code> keyword is optional
+  <br> Will get all the customer records returned even if they don't have a match in <code>SalesOrderHeader</code> table
+  <br> We get a bunch of <code>NULL</code> values in the <code>SalesOrderID</code> column
+  <br> 32166 rows
+  <br> 700 more than previous
+  <br>
+  <code>RIGHT OUTER JOIN</code> gets all the rows from the table on the right even if there's not a match
+  <br> Type in
+  <pre><code>--Using LEFT OUTER JOIN
+SELECT c.CustomerID, c.AccountNumber, o.SalesOrderID
+FROM Sales.SalesOrderHeader AS 
+RIGHT OUTER JOIN Sales.Customer AS c
+ON c.CustomerID = o.CustomerID</code></pre> Highlight and Execute
+  <br> She likes to use <code>LEFT OUTER JOIN</code> because she likes to get the results from the most important table first
+  <br> What if we just want a list of customers who placed orders?
+  <br> Use a sub-query
+  <br> Type in
+  <pre><code>--Use a sub-query to find the customers
+--Who have placed an order
+SELECT CustomerID, AccountNumber
+FROM Sales.Customer
+WHERE CustomerID IN (SELECT CustomerID FROM Sales.SalesOrderHeader)</code></pre> Highlight and Execute
+  <br> Sub-query is surrounded by <code>()</code> and proceeded by the word <code>IN</code>
+  <br> Can only include one column here; cannot have multiple columns
+  <br> 19119 rows
+  <br> Every customer is only listed one time
+  <br> Not doing a <code>JOIN</code>
+  <br> Not included any columns from <code>SalesOrderHeader</code> table
+  <br> Type in
+  <pre><code>/*
+Number of orders: 31465
+Number of customers: 19820 [NOTE: run the first two lines of code above to get this number]
+Number of customers with orders: 19119
+*/</code></pre> Type in
+  <pre><code>--Finding the customers who haven't
+--Placed an order
+SELECT c.CustomerID, c.AccountNumber
+FROM Sales.Customer AS c
+LEFT OUTER JOIN Sales.SalesOrderHeader AS o
+ON c.CustomerID = o.CustomerID
+WHERE o.CustomerID IS NULL
+ORDER BY c.CustomerID</code></pre> Highlight and Execute
+  <br> 701 rows
+  <br> Type in
+  <pre><code>--Step 2 get all rows from the left side
+SELECT c.CustomerID, c.AccountNumber, o.SalesOrderID
+FROM Sales.Customer AS c
+LEFT OUTER JOIN Sales.SalesOrderHeader o
+ON c.CustomerID = o.CustomerID
+ORDER BY c.CustomerID</code></pre> Highlight and Execute
+  <br> Type in
+  <pre><code>--Step 3 filter out rows that are a match
+SELECT c.CustomerID, c.AccountNumber, o.SalesOrderID
+FROM Sales.Customer AS c
+LEFT OUTER JOIN Sales.SalesOrderHeader o
+ON c.CustomerID = o.CustomerID
+WHERE o.SalesOrderID IS NULL
+ORDER BY c.CustomerID</code></pre> Highlight and Execute
+  <br> 701 rows
+  <br> At this point, since all the values in <code>SalesOrderID</code> are <code>NULL</code>, we can get rid of the last column if we want by removing <code>o.SalesOrderID</code> from the first <code>SELECT</code> query line in our code
+  <br> We can also use a sub-query to do this
+  <br> Type in
+  <pre><code>--Use a sub-query
+SELECT CustomerID, AccountNumber
+FROM Sales.Customer
+WHERE CustomerID NOT IN
+(SELECT CustomerID FROM Sales.SalesOrderHeader)</code></pre> Highlight and Execute
+  <br> Very similar to earlier sub-query except for <code>NOT</code>
+  <br> Type in
+  <pre><code>/*
+FULL OUTER JOIN
+Hard to find a reason to do this in a properly 
+designed database, so we'll create a table that doesn't belong
+*/
+IF OBJECT_ID('DepartmentValue') IS NOT NUL
+DROP TABLE DepartmentValue
+
+CREATE TABLE DepartmentValue(DepartmentID int,SomeValue varchar(50))
+INSERT INTO DepartmentValue (DepartmentID, SomeValue)
+VALUES (1, 'one'), (2, 'two'), (20, 'twenty')</code></pre> Highlight and Execute
+  <br> Type in
+  <pre><code>SELECT * FROM DepartmentValue</code></pre> Highlight and Execute
+  <br> Type in
+  <pre><code>--Do an INNER JOIN
+SELECT d.DepartmentID, d.Name, dv.SomeValue
+FROM HumanResources.Department AS d
+INNER JOIN DepartmentValue AS dv
+ON d.DepartmentID = dv.DepartmentID</code></pre> Highlight and Execute
+  <br> Type in
+  <pre><code>--Do an LEFT OUTER JOIN
+SELECT d.DepartmentID, d.Name, dv.SomeValue
+FROM HumanResources.Department AS d
+LEFT OUTER JOIN DepartmentValue AS dv
+ON d.DepartmentID = dv.DepartmentID</code></pre> Highlight and Execute
+  <br> 16 rows, 14 do not match
+  <br> Type in
+  <pre><code>--A RIGHT OUTER JOIN
+SELECT d.DepartmentID, d.Name, dv.SomeValue, dv.DepartmentID
+FROM HumanResources.Department AS d
+RIGHT OUTER JOIN DepartmentValue AS dv
+ON d.DepartmentID = dv.DepartmentID</code></pre> Highlight and Execute
+  <br> Gives us the two rows that match plus an extra one that does not match
+  <br> Type in
+  <pre><code>--FULL OUTER JOIN
+SELECT d.DepartmentID, d.Name, dv.SomeValue, dv.DepartmentID
+FROM HumanResources.Department AS d
+FULL OUTER JOIN DepartmentValue AS dv
+ON d.DepartmentID = dv.DepartmentID</code></pre> Highlight and Execute
+  <br> 17 rows
+  <br> first two rows - equal match of the two tables
+  <br> 14 rows that have no matching value in the <code>DepartmentValue</code> table
+  <br> One row from <code>DepartmentValue</code> table that doesn't have a match in <code>Department</code>
+  <br> You'll very very rarely see something like this
+  <br> Most of the time if you have two tables that have a one to many <code>JOIN</code>, I.E. a customer can have one to many orders.
+  <br>
+  <code>CROSS JOIN</code> is pretty rare
+  <br> Can <code>JOIN</code> two tables that don't have a relationship
+  <br> Type in
+  <pre><code>--Using CROSS JOIN to join two tables with no relationship
+--This is a Cartesian Product!
+
+--First, how many rows in the Location and Product tables?
+SELECT * FROM Production.Location --14
+SELECT * FROM Production.Product --504</code></pre> Highlight and Execute
+  <br> Type in
+  <pre><code>--This join is like multiplying the tables together
+SELECT l.LocationID, l.Name, p.ProductID, p.Name as ProductName
+FROM Production.Product AS p
+CROSS JOIN Prodution.Location AS l</code></pre> Highlight and Execute
+  <br> We get a row for every product in every location
+  <br> 7056 rows
+  <br> Type in
+  <pre><code>SELECT 14 * 504</code></pre> Highlight and Execute
+  <br> get answer of 7056
+  <hr>
+
+  <h2>Video 7 - Aggregate Queries</h2>
+  <img src="http://images.fliqz.com/9af12dd943b5455da1ebe0c86ed1cfb0.jpg" class="img-responsive">
+  
+  <h3>Agenda</h3>
+  <p>Tools
+    <br> Common Aggregate Functions
+    <br> Syntax
+    <br> Examples
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server
+    <br> If you have a SQL Server available, download the sample OLTP database, AdventureWorks, from www.Codeplex.com
+    <br> figure out which version of SQL server you are running and download that specific version
+    <br> You can start with anything from 2008 to 2012 to follow along
+  </p>
+
+  <h3>Tools</h3>
+  <p>SQL Server free virtual labs
+    <br>
+    <a href="http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx">http://www.microsoft.com/sqlserver/en/us/learning-center/virtual-labs.aspx</a>
+    <br> Go back to first video to learn more on how to do this
+  </p>
+
+  <h3>Common Aggregate Functions</h3>
+  <pre><code>COUNT
+MIN
+MAX
+SUM
+AVG</code></pre>
+  <p>Used to summarize our data or group data into sections</p>
+
+  <h3>Syntax</h3>
+  <pre><code>SELECT FUNCTION(col1)
+FROM table1
+SELECT FUNCTION(col1),col2
+FROM table1
+GROUP BY col2</code></pre>
+
+  <h3>Demos, and More Demos!</h3>
+  Type In
+  <pre><code>--Find the count of the rows
+SELECT COUNT(*) AS &quot;Cost of Sales&quot;
+FROM Sales.SalesOrderHeader</code></pre> Highlight and Execute
+  <br> This is one exception where it's always permissible to use the <code>*</code>
+  <br> Type in
+  <pre><code>--Look at subTotal
+SELECT COUNT(SubTotal) AS &quot;Count of SubTotal&quot;,
+SUM(SubTotal) AS &quot;Sum of SubTotal&quot;,
+MIN(SubTotal) AS &quot;Min SubTotal&quot;,
+MAX(SubTotal) AS &quot;Max SubTotal&quot;,
+AVG(SubTotal) AS &quot;Avg SubTotal&quot;
+FROM Sales.SalesOrderHeader</code></pre> Highlight and Execute
+  <br> We get back one row with the answer for the entire table
+  <br> Type in
+  <pre><code>--Use an expression
+SELECT SUM(SubTotal + TaxAmt + Freight) AS &quot;Total Due&quot;
+FROM Sales.SalesOrderHeader</code></pre> Highlight and Execute
+  <br> Gives the total due for the entire table
+  <br> Type in
+  <pre><code>--Nulls?
+SELECT COUNT(*) AS &quot;Cost of rows&quot;
+COUNT(SubTotal) AS &quot;Count of SubTotal&quot;
+COUNT(CurrencyRateID) AS &quot;Count of CurrencyRateID&quot;
+FROM Sales.SalesOrderHeader</code></pre> Highlight and Execute
+  <br> Aggregate functions ignore <code>NULL</code> values
+  <br> Type in
+  <pre><code>SELECT AVG(CurrencyRateID) AS &quot;Avg CurrencyRateID&quot;,
+SUM(CurrencyRateID)/COUNT(*) AS &quot;Sum/Count of Rows&quot;
+FROM Sales.SalesOrderHeader</code></pre> Highlight and Execute
+  <br> We get two very different answers due to <code>NULL</code> values being ignored
+  <br> Be sure to keep this in mind because your requirements will determine how to count the average
+  <br> Type in
+  <pre><code>--Display the count of orders for each customer
+SELECT CustomerID, COUNT(*) AS &quot;Order Count&quot;
+FROM Sales.SalesOrderHeader</code></pre> Highlight and Execute
+  <br> Gives error telling us what we need to do
+  <br> Type in
+  <pre><code>--Add a GROUP BY clause
+SELECT CustomerID, COUNT(*) AS &quot;Order Count&quot;
+FROM Sales.SalesOrderHeader
+GROUP BY CustomerID</code></pre> Highlight and Execute
+  <br> Get a list of every customer ID and a count of the orders
+  <br> Type in
+  <pre><code>--Order by the expression
+SELECT CustomerID, COUNT(*) AS &quot;Order Count&quot;
+FROM Sales.SalesOrderHeader
+GROUP BY CustomerID
+ORDER BY COUNT(8) DESC</code></pre> Highlight and Execute
+  <br> Now it's sorted by customers who ordered the most
+  <br> Type in
+  <pre><code>--Get some more details about customer
+SELECT o.CustomerID, COUNT(*) AS &quot;Order Count&quot;,
+c.AccountNumber
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+GROUP BY o.CustomerID, c.AccountNumber</code></pre> Highlight and Execute
+  <br> Type in
+  <pre><code>/* Any column that appears in the SELECT list or
+ORDER BY clause that is not part of an aggregate
+function MUST appear in the GROUP BY clause
+*/
+SELECT o.CustomerID, COUNT(*) AS &quot;Order Count&quot;
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+GROUP BY o.CustomerID, c.AccountNumber
+ORDER BY c.AccountNumber</code></pre> Highlight and Execute
+  <br> She commented out <code>c.AccountNumber</code> and we get the earlier error again
+  <br> Type in
+  <pre><code>--Don't include anything you don't need
+SELECT o.CustomerID, COUNT(*) AS &quot;Order Count&quot;
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+GROUP BY o.CustomerID, c.AccountNumber, o.SalesOrderID
+ORDER BY c.AccountNumber</code></pre> Highlight and Execute
+  <br> Runs without an error but the results are messed up
+  <br> Multiple customers with order counts of 1
+  <br> Get rid of <code>o.SalesOrderID</code>
+  <br> She starts adding all the columns she needs, copy &amp; pastes into her <code>GROUP BY</code> statement &amp; then starts eliminating all of the aggregate expression
+  <br> Type in
+  <pre><code>--Don't use an aggregate function in WHERE
+SELECT o.CustomerID, COUNT(*) AS &quot;Order Count&quot;
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+WHERE COUNT(*) > 5
+GROUP BY o.CustomerID</code></pre> Highlight and Execute
+  <br> We get an error stating an aggregate may not appear in the <code>WHERE</code> clause
+  <br> The <code>WHERE</code> clause is evaluated and processed before the aggregate is applied
+  <br> Type in
+  <pre><code>--Use HAVING
+SELECT o.CustomerID, COUNT(*) AS &quot;Order Count&quot;
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+GROUP BY o.CustomerID
+HAVING COUNT(*) > 5</code></pre> Highlight and Execute
+  <br>
+  <code>HAVING</code> filters out after aggregate queries have been applied
+  <br> She first ran it without the <code>HAVING</code> statement
+  <br> 19199 rows
+  <br> Then included the <code>HAVING</code> clause
+  <br> 337 rows
+  <br> Type in
+  <pre><code>SELECT o.CustomerID, COUNT(*) AS &quot;Order Count&quot;
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+GROUP BY o.CustomerID
+HAVING SUM(SubTotal) > 10000</code></pre> Highlight and Execute
+  <br> 477 rows
+  <br> Type in
+  <pre><code>--Compare to this
+SELECT o.CustomerID, COUNT(*) AS &quot;Order Count&quot;
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+WHERE SubTotal > 10000
+GROUP BY o.CustomerID</code></pre> Highlight and Execute
+  <br> 341 rows
+  <br> In this example are filtering first then applying the aggregate
+  <br> Previous example applies the aggregate first then filters
+  <br> We get two different results
+  <br> Think very carefully about what you're trying to accomplish
+  <br> Type in
+  <pre><code>--Let's get a count of orders by customer by year
+SELECT c.CustomerID, COUNT(SalesOrderID) AS CountOfSales,
+YEAR(o.OrderDate) AS OrderYear
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+GROUP BY c.CustomerID</code></pre> Highlight and Execute
+  <br> We get an error
+  <br> The way around this is
+  <br> Type in
+  <pre><code>--Let's get a count of orders by customer by year
+SELECT c.CustomerID, COUNT(SalesOrderID) AS CountOfSales,
+YEAR(o.OrderDate) AS OrderYear
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+GROUP BY c.CustomerID, o.OrderDate
+ORDER BY c.CustomerID, YEAR(o.OrderDate)</code></pre> Highlight and Execute
+  <br> Notice that we now have some results we didn't expect
+  <br> Problem is that we need to
+  <br> Type in
+  <pre><code>--Add complete expression to GROUP BY
+SELECT c.CustomerID, COUNT(SalesOrderID) AS CountOfSales,
+YEAR(o.OrderDate) AS OrderYear
+FROM Sales.SalesOrderHeader AS o
+INNER JOIN Sales.Customer AS c
+ON o.CustomerID = c.CustomerID
+GROUP BY c.CustomerID, YEAR(o.OrderDate)
+ORDER BY c.CustomerID, YEAR(o.OrderDate)</code></pre> Highlight and Execute
+  <br> Now we are getting the exact results we needed
+  <br> Type in
+  <pre><code>--Aggregate of character data
+SELECT MIN(LastName) AS &quot;Min last name&quot;,
+MAX(LastName) AS &quot;Max last name&quot;
+FROM Person.Person</code></pre> Highlight and Execute
+  <br> get &quot;Abbas&quot; and &quot;Zwilling&quot;
+  <br> Type in
+  <pre><code>SELECT AVG(LastName)
+FROM Person.Person</code></pre> Highlight and Execute
+  <br> get error
+  <hr>
+
+</body>
+
+</html>
